@@ -19,6 +19,7 @@ export default defineConfig({
       md.use(markdownItFootnote)
     },
   },
+  lang: 'ko',
   head: [
     [
       'link',

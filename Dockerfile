@@ -15,6 +15,7 @@ RUN pnpm run docs:build
 FROM nginx:alpine as deploy
 
 COPY --from=build /app/.vitepress/dist /usr/share/nginx/html
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
