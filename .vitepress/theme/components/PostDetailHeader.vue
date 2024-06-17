@@ -11,7 +11,11 @@
 
     <div class="datetime">
       <span class="material-icons">schedule</span>
-      {{ dayjs(frontmatter.timestamp * 1000).format('YYYY-MM-DD HH:mm:ss') }}
+      <ClientOnly>
+        <time :datetime="getTime()">
+          {{ getTime() }}
+        </time>
+      </ClientOnly>
     </div>
 
     <div class="chip-list">
@@ -36,6 +40,10 @@ import timezone from 'dayjs/plugin/timezone'
 dayjs.extend(timezone)
 
 const { frontmatter } = useData()
+
+function getTime() {
+  return dayjs(frontmatter.value.timestamp * 1000).format('YYYY-MM-DD HH:mm:ss')
+}
 </script>
 
 <style lang="scss" scoped>

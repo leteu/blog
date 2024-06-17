@@ -14,7 +14,11 @@
             <div class="post__content__subtitle">{{ post.subtitle }}</div>
             <div class="post__content__datetime">
               <span class="material-icons">schedule</span>
-              {{ dayjs(post.timestamp * 1000).format('YYYY-MM-DD HH:mm:ss') }}
+              <ClientOnly>
+                <time :datetime="getTime(post.timestamp)">
+                  {{ getTime(post.timestamp) }}
+                </time>
+              </ClientOnly>
             </div>
           </div>
           <div
@@ -38,6 +42,10 @@ import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
 
 dayjs.extend(timezone)
+
+function getTime(timestamp: number) {
+  return dayjs(timestamp * 1000).format('YYYY-MM-DD HH:mm:ss')
+}
 </script>
 
 <style lang="scss" scoped>
