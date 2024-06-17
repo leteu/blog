@@ -1,0 +1,12 @@
+node_modules
+*.log
+.DS_Store
+.idea
+.temp
+.vite_opt_cache
+.vscode
+pnpm-global
+cache
+dist
+temp
+examples-temp

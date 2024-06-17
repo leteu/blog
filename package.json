@@ -1,0 +1,41 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview",
+    "lint": "eslint . --ext ts --color --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --write \"**/*.{ts,scss,sass,html,md,json}\" --ignore-path .gitignore"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/markdown-it-footnote": "^3.0.4",
+    "@types/node": "^20.14.2",
+    "dayjs": "^1.11.11",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "eslint-plugin-unused-imports": "^3.2.0",
+    "feed": "^4.2.2",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-mathjax3": "^4.3.2",
+    "prettier": "2.8.8",
+    "sass": "^1.77.5",
+    "typescript": "^5.4.5",
+    "vitepress": "^1.2.3",
+    "vue": "^3.4.27"
+  }
+}
