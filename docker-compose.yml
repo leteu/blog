@@ -1,0 +1,9 @@
+name: blog
+services:
+  docs:
+    build: .
+    container_name: blog
+    ports:
+      - '9080:80'
+    stdin_open: true
+    tty: true

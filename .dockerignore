@@ -1,0 +1,10 @@
+node_modules
+.idea
+.vscode
+build
+cache
+dist
+temp
+license
+README.md
+.git
