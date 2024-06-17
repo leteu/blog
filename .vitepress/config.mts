@@ -1,7 +1,11 @@
-import { createContentLoader, defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress'
 
 import markdownItFootnote from 'markdown-it-footnote'
 import { genFeed } from './genFeed'
+import dayjs from 'dayjs'
+import timezone from 'dayjs/plugin/timezone'
+
+dayjs.extend(timezone)
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -96,7 +100,9 @@ export default defineConfig({
     ],
 
     footer: {
-      copyright: `<a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> | © 2022-${new Date().getFullYear()}. leteu. All rights reserved.`,
+      copyright: `<a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> | © 2022-${dayjs().format(
+        'YYYY',
+      )}. leteu. All rights reserved.`,
     },
   },
   buildEnd: genFeed,

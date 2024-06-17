@@ -2,6 +2,10 @@ import path from 'path'
 import { writeFileSync } from 'fs'
 import { Feed } from 'feed'
 import { createContentLoader, type SiteConfig } from 'vitepress'
+import dayjs from 'dayjs'
+import timezone from 'dayjs/plugin/timezone'
+
+dayjs.extend(timezone)
 
 const baseUrl = `https://leteu.dev`
 
@@ -13,7 +17,9 @@ export async function genFeed(config: SiteConfig) {
     link: baseUrl,
     language: 'ko',
     favicon: `${baseUrl}/favicon.ico`,
-    copyright: `<a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> | © 2022-${new Date().getFullYear()}. leteu. All rights reserved.`,
+    copyright: `<a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> | © 2022-${dayjs().format(
+      'YYYY',
+    )}. leteu. All rights reserved.`,
   })
 
   const posts = await createContentLoader('posts/*.md', {
@@ -30,7 +36,7 @@ export async function genFeed(config: SiteConfig) {
       link: `${baseUrl}${url}`,
       description: excerpt,
       content: html?.replace(/&ZeroWidthSpace;/gi, ''),
-      date: frontmatter.timestamp,
+      date: new Date(frontmatter.timestamp),
     })
   }
 
