@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress'
 
-import markdownItFootnote from 'markdown-it-footnote'
 import { genFeed } from './genFeed'
 import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
@@ -15,9 +14,6 @@ export default defineConfig({
   markdown: {
     math: true,
     lineNumbers: true,
-    config: (md) => {
-      md.use(markdownItFootnote)
-    },
   },
   lang: 'ko',
   head: [

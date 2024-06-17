@@ -47,9 +47,6 @@ importers:
       feed:
         specifier: ^4.2.2
         version: 4.2.2
-      markdown-it-footnote:
-        specifier: ^4.0.0
-        version: 4.0.0
       markdown-it-mathjax3:
         specifier: ^4.3.2
         version: 4.3.2
@@ -1420,9 +1417,6 @@ packages:
 
   mark.js@8.11.1:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
-
-  markdown-it-footnote@4.0.0:
-    resolution: {integrity: sha512-WYJ7urf+khJYl3DqofQpYfEYkZKbmXmwxQV8c8mO/hGIhgZ1wOe7R4HLFNwqx7TjILbnC98fuyeSsin19JdFcQ==}
 
   markdown-it-mathjax3@4.3.2:
     resolution: {integrity: sha512-TX3GW5NjmupgFtMJGRauioMbbkGsOXAAt1DZ/rzzYmTHqzkO1rNAdiMD4NiruurToPApn2kYy76x02QN26qr2w==}
@@ -3521,8 +3515,6 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.4.15
 
   mark.js@8.11.1: {}
-
-  markdown-it-footnote@4.0.0: {}
 
   markdown-it-mathjax3@4.3.2:
     dependencies:

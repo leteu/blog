@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'MesloLGS NF';
+  font-weight: normal;
+  font-style: normal;
+  src: url('/fonts/MesloLGS/MesloLGS-NF-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'MesloLGS NF';
+  font-weight: bold;
+  font-style: normal;
+  src: url('/fonts/MesloLGS/MesloLGS-NF-Bold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'MesloLGS NF';
+  font-weight: normal;
+  font-style: italic;
+  src: url('/fonts/MesloLGS/MesloLGS-NF-Italic.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'MesloLGS NF';
+  font-weight: bold;
+  font-style: italic;
+  src: url('/fonts/MesloLGS/MesloLGS-NF-Bold-Italic.ttf') format('ttf');
+}
