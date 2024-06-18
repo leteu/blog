@@ -9,13 +9,15 @@
 
     <h1>{{ frontmatter.title }}</h1>
 
-    <div class="datetime">
-      <span class="material-icons">schedule</span>
-      <ClientOnly>
-        <time :datetime="getTime()">
-          {{ getTime() }}
-        </time>
-      </ClientOnly>
+    <div class="info-container">
+      <div class="datetime">
+        <span class="material-icons">schedule</span>
+        <ClientOnly>
+          <time :datetime="getTime(frontmatter.timestamp)">
+            {{ getTime(frontmatter.timestamp) }}
+          </time>
+        </ClientOnly>
+      </div>
     </div>
 
     <div class="chip-list">
@@ -41,8 +43,8 @@ dayjs.extend(timezone)
 
 const { frontmatter } = useData()
 
-function getTime() {
-  return dayjs(frontmatter.value.timestamp * 1000).format('YYYY-MM-DD HH:mm:ss')
+function getTime(timestamp: number) {
+  return dayjs(timestamp * 1000).format('YYYY-MM-DD HH:mm:ss')
 }
 </script>
 
@@ -59,6 +61,13 @@ function getTime() {
   width: 100%;
 }
 
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 .datetime {
   display: flex;
   align-items: center;
@@ -66,8 +75,10 @@ function getTime() {
   gap: 4px;
   color: var(--vp-c-text-2) !important;
   font-size: 16px;
+  line-height: 24px;
   .material-icons {
-    font-size: inherit;
+    font-size: 20px;
+    line-height: 24px;
   }
 }
 

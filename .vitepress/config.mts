@@ -9,7 +9,7 @@ dayjs.extend(timezone)
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'leteu',
-  description: 'A VitePress Site',
+  description: 'leteu 개발 블로그',
   cleanUrls: true,
   markdown: {
     math: true,
@@ -64,11 +64,11 @@ export default defineConfig({
       { text: 'Portfolio', link: 'https://portfolio.leteu.dev' },
     ],
 
+    darkModeSwitchLabel: '다크모드',
+
     outline: {
       label: '목차',
     },
-
-    darkModeSwitchLabel: '다크모드',
 
     search: {
       provider: 'local',
@@ -103,4 +103,8 @@ export default defineConfig({
     },
   },
   buildEnd: genFeed,
+  sitemap: {
+    hostname: 'https://leteu.dev',
+  },
+  srcExclude: ['**/README.md'],
 })

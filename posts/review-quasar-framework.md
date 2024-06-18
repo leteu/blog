@@ -10,8 +10,6 @@
 }
 ---
 
-<PostDetailHeader />
-
 회사에서 사용 중인 Vue UI 프레임워크를 소개해보려고 한다.
 Vue 사용자도 React에 비해 많이 적은 와중에 UI 프레임워크는 보통 Vuetify를 많이 사용한다.
 Quasar를 처음 접했을 때 검색하기 참 힘들었던 거 같다.
