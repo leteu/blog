@@ -1,10 +1,22 @@
 <template>
   <div
     class="chip"
+    :class="{
+      chip__active: active,
+      chip__clickable: clickable,
+    }"
     @click="onClickTag"
   >
     <template v-if="showTag"># </template>
     {{ label }}
+    <template v-if="count">
+      <span class="chip__count">
+        {{ count }}
+      </span>
+    </template>
+    <template v-if="active">
+      <span class="chip__active__icon material-icons">cancel</span>
+    </template>
   </div>
 </template>
 
@@ -15,6 +27,18 @@ const props = defineProps({
     required: true,
   },
   showTag: {
+    type: Boolean,
+    default: () => false,
+  },
+  count: {
+    type: Number,
+    default: () => undefined,
+  },
+  clickable: {
+    type: Boolean,
+    default: () => false,
+  },
+  active: {
     type: Boolean,
     default: () => false,
   },
@@ -37,6 +61,23 @@ const onClickTag = () => {
   font-weight: 500;
   border-radius: 4px;
   padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  &__clickable {
+    cursor: pointer;
+  }
+  &__count {
+    margin-left: 4px;
+  }
+  &__active {
+    background: var(--vp-c-brand-1);
+    color: var(--vp-c-white);
+    &__icon {
+      font-size: 12px;
+      margin-left: 4px;
+    }
+  }
 }
 
 .dark .chip {

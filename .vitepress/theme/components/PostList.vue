@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
+  <div class="home-container">
     <div class="post-list">
       <template
-        v-for="(post, index) in posts"
+        v-for="(post, index) in filterdPosts"
         :key="`post-${index}`"
       >
         <a
@@ -33,25 +33,69 @@
         </a>
       </template>
     </div>
+    <div class="side-content">
+      <div class="side-content__tags">
+        <span class="side-content__tags__title">태그</span>
+        <div class="side-content__tags__list">
+          <template v-for="tag in tags">
+            <TagChip
+              :label="tag.label"
+              :count="tag.count"
+              :active="selectedTags.has(tag.label)"
+              clickable
+              @click:tag="onClickTag(tag)"
+            />
+          </template>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { Tag } from '../tags.data'
+
 import { data as posts } from '../posts.data'
+import { data as tags } from '../tags.data'
 import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
 
+import TagChip from './TagChip.vue'
+import { computed, ref } from 'vue'
+
 dayjs.extend(timezone)
+
+const selectedTags = ref<Set<Tag['label']>>(new Set())
+const filterdPosts = computed(() => {
+  if (!selectedTags.value.size) return posts
+
+  return posts.filter((post) => post.tags.some((tag) => selectedTags.value.has(tag)))
+})
 
 function getTime(timestamp: number) {
   return dayjs(timestamp * 1000).format('YYYY-MM-DD HH:mm:ss')
 }
+
+function onClickTag(tag: Tag) {
+  if (selectedTags.value.has(tag.label)) {
+    selectedTags.value.delete(tag.label)
+    return
+  }
+
+  selectedTags.value.add(tag.label)
+}
 </script>
 
 <style lang="scss" scoped>
+.home-container {
+  display: flex;
+  gap: 32px;
+}
+
 .post-list {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .post {
@@ -132,6 +176,21 @@ function getTime(timestamp: number) {
   }
 }
 
+.side-content {
+  width: 300px;
+  &__tags {
+    &__title {
+      color: var(--vp-c-text-2) !important;
+      font-size: 12px;
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .post {
     height: 120px;
@@ -153,6 +212,10 @@ function getTime(timestamp: number) {
       width: 85px;
       height: 60px;
     }
+  }
+
+  .side-content {
+    display: none;
   }
 }
 </style>

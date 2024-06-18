@@ -8,7 +8,6 @@ import './material-icons.css'
 import './meslo-lgs-nf.css'
 import MainLayout from './layouts/MainLayout.vue'
 import PostList from './components/PostList.vue'
-import TagChip from './components/TagChip.vue'
 
 export default {
   extends: DefaultTheme,
@@ -21,6 +20,5 @@ export default {
   enhanceApp({ app, router, siteData }) {
     // ...
     app.component('PostList', PostList)
-    app.component('TagChip', TagChip)
   },
 } satisfies Theme

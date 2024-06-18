@@ -39,6 +39,8 @@ import { useData } from 'vitepress'
 import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
 
+import TagChip from './TagChip.vue'
+
 dayjs.extend(timezone)
 
 const { frontmatter } = useData()
