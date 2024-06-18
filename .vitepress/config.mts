@@ -30,6 +30,13 @@ export default defineConfig({
       gtag('config', '${env.VITE_GOOGLE_TAG}');`,
     ],
     [
+      'meta',
+      {
+        name: 'naver-site-verification',
+        content: `${env.VITE_NAVER_VERIFICATION}`,
+      },
+    ],
+    [
       'link',
       {
         rel: 'icon',
