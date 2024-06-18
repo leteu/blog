@@ -84,5 +84,9 @@ const onClickTag = () => {
   background: none;
   border: 1px solid var(--vp-c-brand-1);
   color: var(--vp-c-brand-1);
+  &__active {
+    background: var(--vp-c-brand-2);
+    color: var(--vp-c-gray-3);
+  }
 }
 </style>
