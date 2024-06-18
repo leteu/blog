@@ -3,8 +3,11 @@ import { defineConfig } from 'vitepress'
 import { genFeed } from './genFeed'
 import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
+import { loadEnv } from 'vitepress'
 
 dayjs.extend(timezone)
+
+const env = loadEnv('', process.cwd())
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -17,6 +20,15 @@ export default defineConfig({
   },
   lang: 'ko',
   head: [
+    ['script', { async: '', src: `https://www.googletagmanager.com/gtag/js?id=${env.VITE_GOOGLE_TAG}` }],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${env.VITE_GOOGLE_TAG}');`,
+    ],
     [
       'link',
       {

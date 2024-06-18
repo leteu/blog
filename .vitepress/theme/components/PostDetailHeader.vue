@@ -1,5 +1,5 @@
 <template>
-  <div class="detail-header">
+  <div class="detail-header vp-doc">
     <img
       v-if="frontmatter.mainImg"
       :src="frontmatter.mainImg"
