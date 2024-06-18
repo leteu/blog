@@ -218,4 +218,10 @@ function onClickTag(tag: Tag) {
     display: none;
   }
 }
+
+@media (max-width: 900px) {
+  .side-content {
+    display: none;
+  }
+}
 </style>
