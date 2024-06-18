@@ -36,9 +36,16 @@ export async function genFeed(config: SiteConfig) {
       link: `${baseUrl}${url}`,
       description: excerpt,
       content: html?.replace(/&ZeroWidthSpace;/gi, ''),
+      author: [
+        {
+          name: 'Shin Gyuhyeon',
+          email: 'contact@leteu.dev',
+          link: 'https://leteu.dev',
+        },
+      ],
       date: new Date(frontmatter.timestamp),
     })
   }
 
-  writeFileSync(path.join(config.outDir, 'feed.rss'), feed.rss2())
+  writeFileSync(path.join(config.outDir, 'rss.xml'), feed.rss2())
 }
