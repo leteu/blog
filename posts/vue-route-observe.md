@@ -5,7 +5,7 @@
   timestamp: 1645084587,
   outline: 'deep',
   tags: ['vue3', '라우트 변경 감지', '새로고침 감지', '창 닫기 감지'],
-  mainImg: '/images/Vue.jpg',
+  mainImg: '/images/vue-route-observe.png',
 }
 ---
 

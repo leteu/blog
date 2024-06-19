@@ -13,7 +13,7 @@
       'getEntriesByType',
       'PerformanceNavigationTiming',
     ],
-  mainImg: '/images/javascript.png',
+  mainImg: '/images/js-navigation-timing.png',
 }
 ---
 
