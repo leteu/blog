@@ -4,6 +4,8 @@ import { genFeed } from './genFeed'
 import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
 import { loadEnv } from 'vitepress'
+import { HeadConfig } from 'vitepress'
+import { Content } from './theme/posts.data'
 
 dayjs.extend(timezone)
 
@@ -11,7 +13,7 @@ const env = loadEnv('', process.cwd())
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'leteu',
+  title: 'leteu Dev',
   description: 'leteu 개발 블로그',
   cleanUrls: true,
   markdown: {
@@ -32,8 +34,22 @@ export default defineConfig({
     [
       'meta',
       {
+        name: 'google-site-verification',
+        content: `${env.VITE_NAVER_VERIFICATION}`,
+      },
+    ],
+    [
+      'meta',
+      {
         name: 'naver-site-verification',
         content: `${env.VITE_NAVER_VERIFICATION}`,
+      },
+    ],
+    [
+      'meta',
+      {
+        name: 'msvalidate.01',
+        content: `${env.VITE_BING_VERIFICATION}`,
       },
     ],
     [
@@ -75,6 +91,62 @@ export default defineConfig({
     ['link', { rel: 'icon', type: 'image/ico', href: '/favicon.ico' }],
     ['link', { rel: 'icon', type: 'image/svg', href: '/favicon.svg' }],
   ],
+  transformHead: ({ page, pageData, siteData }) => {
+    const head: HeadConfig[] = []
+
+    head.push([
+      'meta',
+      {
+        name: 'og:type',
+        content: pageData.frontmatter.layout === 'home' ? 'website' : 'article',
+      },
+    ])
+    head.push([
+      'meta',
+      { property: 'og:image', content: pageData.frontmatter.mainImg || `${env.VITE_HOST_URL}/images/logo.png` },
+    ])
+    head.push([
+      'meta',
+      {
+        name: 'og:title',
+        content: pageData.title || siteData.title,
+      },
+    ])
+    head.push(['meta', { property: 'og:site_name', content: siteData.title }])
+    head.push(['meta', { property: 'og:url', content: `${env.VITE_HOST_URL}/${page}` }])
+    head.push(['meta', { property: 'og:locale', content: 'ko_KR' }])
+
+    if (pageData.frontmatter.description) {
+      head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description }])
+    }
+
+    head.push([
+      'meta',
+      {
+        property: 'article:published_time',
+        content: dayjs.unix(pageData.frontmatter.timestamp).format('YYYY-MM-DDTHH:mm:ssZ'),
+      },
+    ])
+    if (pageData.lastUpdated) {
+      head.push([
+        'meta',
+        { property: 'article:modified_time', content: dayjs(pageData.lastUpdated).format('YYYY-MM-DDTHH:mm:ssZ') },
+      ])
+    }
+
+    /* i18n */
+    // for (const lang of []) {
+    //   head.push(['meta', { property: 'og:locale:alternate', content: lang }])
+    // }
+
+    if (pageData.frontmatter.tags) {
+      for (const tag of pageData.frontmatter.tags) {
+        head.push(['meta', { property: 'article:tag', content: tag }])
+      }
+    }
+
+    return head
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
@@ -117,7 +189,7 @@ export default defineConfig({
         icon: {
           svg: '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#5f6368"><path d="M0 0h24v24H0z" fill="none"/><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>',
         },
-        link: 'https://leteu.dev/rss',
+        link: `${env.VITE_HOST_URL}/rss`,
       },
     ],
 
@@ -129,7 +201,7 @@ export default defineConfig({
   },
   buildEnd: genFeed,
   sitemap: {
-    hostname: 'https://leteu.dev',
+    hostname: env.VITE_HOST_URL,
   },
   srcExclude: ['**/README.md'],
 })
