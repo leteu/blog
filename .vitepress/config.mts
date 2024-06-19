@@ -35,7 +35,7 @@ export default defineConfig({
       'meta',
       {
         name: 'google-site-verification',
-        content: `${env.VITE_NAVER_VERIFICATION}`,
+        content: `${env.VITE_GOOGLE_VERIFICATION}`,
       },
     ],
     [
