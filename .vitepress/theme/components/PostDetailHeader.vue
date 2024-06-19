@@ -3,7 +3,7 @@
     <img
       v-if="frontmatter.mainImg"
       :src="frontmatter.mainImg"
-      alt=""
+      :alt="`${frontmatter.title} main image`"
       class="main-img"
     />
 
