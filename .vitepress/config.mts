@@ -109,7 +109,7 @@ export default defineConfig({
       'meta',
       {
         name: 'og:title',
-        content: pageData.title || siteData.title,
+        content: pageData.frontmatter.title || siteData.title,
       },
     ])
     head.push(['meta', { property: 'og:site_name', content: siteData.title }])
@@ -120,13 +120,15 @@ export default defineConfig({
       head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description }])
     }
 
-    head.push([
-      'meta',
-      {
-        property: 'article:published_time',
-        content: dayjs.unix(pageData.frontmatter.timestamp).format('YYYY-MM-DDTHH:mm:ssZ'),
-      },
-    ])
+    if (pageData.frontmatter.timestamp) {
+      head.push([
+        'meta',
+        {
+          property: 'article:published_time',
+          content: dayjs.unix(pageData.frontmatter.timestamp).format('YYYY-MM-DDTHH:mm:ssZ'),
+        },
+      ])
+    }
     if (pageData.lastUpdated) {
       head.push([
         'meta',
