@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@giscus/vue": "^3.0.0",
     "@types/markdown-it-footnote": "^3.0.4",
     "@types/node": "^20.14.2",
     "dayjs": "^1.11.11",
