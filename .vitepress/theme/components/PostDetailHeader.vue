@@ -19,14 +19,16 @@
         </ClientOnly>
       </div>
 
-      <div class="datetime">
-        <span class="material-icons">update</span>
-        <ClientOnly>
-          <time :datetime="getTime(page.lastUpdated / 1000)">
-            {{ getTime(page.lastUpdated / 1000) }}
-          </time>
-        </ClientOnly>
-      </div>
+      <template v-if="page.lastUpdated">
+        <div class="datetime">
+          <span class="material-icons">update</span>
+          <ClientOnly>
+            <time :datetime="getTime(page.lastUpdated / 1000)">
+              {{ getTime(page.lastUpdated / 1000) }}
+            </time>
+          </ClientOnly>
+        </div>
+      </template>
     </div>
 
     <div class="chip-list">

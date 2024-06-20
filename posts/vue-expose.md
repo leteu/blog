@@ -136,6 +136,8 @@ export { Child }
 이제 Child 컴포넌트를 사용하는 부모 vue 파일에서도 코드를 약간 수정해 준다.  
 (typeof 라고 작성해준거 제거)
 
+::: code-group
+
 ```vue [부모 컴포넌트]
 <template>
   <Child @click="onClick" />
