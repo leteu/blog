@@ -4,7 +4,7 @@
   subtitle: '',
   timestamp: 1646209620,
   outline: 'deep',
-  tags: ['Vue', 'Quasar', 'Framework'],
+  tags: ['vue', 'vue3', 'Quasar', 'Framework'],
   layout: 'doc',
   mainImg: '/images/Vue.jpg',
 }

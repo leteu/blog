@@ -4,7 +4,7 @@
   subtitle: '',
   timestamp: 1647504296,
   outline: 'deep',
-  tags: ['Vue3', 'Prop', 'Emit'],
+  tags: ['vue3', 'Prop', 'Emit'],
   mainImg: '/images/Vue.jpg',
 }
 ---

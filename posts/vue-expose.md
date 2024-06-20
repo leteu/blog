@@ -4,7 +4,7 @@
   subtitle: 'Vue3에서 부모 컴포넌트에서 자식 컴포넌트의 함수 호출하기',
   timestamp: 1700811120,
   outline: 'deep',
-  tags: ['Vue3', 'Expose'],
+  tags: ['vue3', 'Expose'],
   mainImg: '/images/Vue.jpg',
 }
 ---
