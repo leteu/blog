@@ -18,6 +18,15 @@
           </time>
         </ClientOnly>
       </div>
+
+      <div class="datetime">
+        <span class="material-icons">update</span>
+        <ClientOnly>
+          <time :datetime="getTime(page.lastUpdated / 1000)">
+            {{ getTime(page.lastUpdated / 1000) }}
+          </time>
+        </ClientOnly>
+      </div>
     </div>
 
     <div class="chip-list">
@@ -43,10 +52,10 @@ import TagChip from './TagChip.vue'
 
 dayjs.extend(timezone)
 
-const { frontmatter } = useData()
+const { frontmatter, page } = useData()
 
 function getTime(timestamp: number) {
-  return dayjs(timestamp * 1000).format('YYYY-MM-DD HH:mm:ss')
+  return dayjs.unix(timestamp).format('YYYY-MM-DD HH:mm:ss')
 }
 </script>
 

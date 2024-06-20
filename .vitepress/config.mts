@@ -198,6 +198,14 @@ export default defineConfig({
         'YYYY',
       )}. leteu. All rights reserved.`,
     },
+
+    lastUpdated: {
+      text: 'Updated at',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium',
+      },
+    },
   },
   buildEnd: genFeed,
   sitemap: {
