@@ -104,7 +104,7 @@ COPY ./docs .
 
 ::: code-group
 
-```ignore [.dockerignore]
+```txt [.dockerignore]
 node_modules
 *.log
 .DS_Store
