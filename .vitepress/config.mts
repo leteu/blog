@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
 import { loadEnv } from 'vitepress'
 import { HeadConfig } from 'vitepress'
-import { Content } from './theme/posts.data'
+import footnote from 'markdown-it-footnote'
 
 dayjs.extend(timezone)
 
@@ -19,6 +19,9 @@ export default defineConfig({
   markdown: {
     math: true,
     lineNumbers: true,
+    config: (md) => {
+      md.use(footnote)
+    },
   },
   lang: 'ko',
   head: [

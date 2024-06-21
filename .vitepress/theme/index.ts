@@ -8,6 +8,7 @@ import './material-icons.css'
 import './meslo-lgs-nf.css'
 import MainLayout from './layouts/MainLayout.vue'
 import PostList from './components/PostList.vue'
+import FootnoteTooltip from './components/FootnoteTooltip.vue'
 
 export default {
   extends: DefaultTheme,
@@ -20,5 +21,6 @@ export default {
   enhanceApp({ app, router, siteData }) {
     // ...
     app.component('PostList', PostList)
+    app.component('FootnoteTooltip', FootnoteTooltip)
   },
 } satisfies Theme
