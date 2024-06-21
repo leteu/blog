@@ -325,7 +325,7 @@ run 관련 추가 옵션 및 명령어는 공식 문서 확인하는거로~
 
 ## 6. 마치는 글
 
-Docker compose를 통해서 실행하고 싶다면 [다음 포스트](./deploy-vitepress-with-docker-compose.md)를 확인하거나 내 블로그 github 가서 긁어가면 된다.  
+Docker compose를 통해서 실행하고 싶다면 [다음 포스트](deploy-vitepress-with-docker-compose.md)를 확인하거나 내 블로그 github 가서 긁어가면 된다.  
 서버 없는 사람들을 위해서 어차피 정적 파일밖에 없는 vitepress 파일들을 굳이 서버에 안 올리고 github page에 action을 통해서 main 브랜치에 push 될 때 배포되도록 하는 방법 역시 작성을 해둘 생각이다.
 
 [^1]: Static Site Generator
