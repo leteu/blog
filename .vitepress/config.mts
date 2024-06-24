@@ -6,6 +6,7 @@ import timezone from 'dayjs/plugin/timezone'
 import { loadEnv } from 'vitepress'
 import { HeadConfig } from 'vitepress'
 import footnote from 'markdown-it-footnote'
+import { load as HTMLLoad } from 'cheerio'
 
 dayjs.extend(timezone)
 
@@ -94,7 +95,7 @@ export default defineConfig({
     ['link', { rel: 'icon', type: 'image/ico', href: '/favicon.ico' }],
     ['link', { rel: 'icon', type: 'image/svg', href: '/favicon.svg' }],
   ],
-  transformHead: ({ page, pageData, siteData }) => {
+  transformHead: ({ page, pageData, siteData, content: htmlContent }) => {
     const head: HeadConfig[] = []
 
     head.push([
@@ -119,8 +120,45 @@ export default defineConfig({
     head.push(['meta', { property: 'og:url', content: `${env.VITE_HOST_URL}/${page}` }])
     head.push(['meta', { property: 'og:locale', content: 'ko_KR' }])
 
-    if (pageData.frontmatter.description) {
-      head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description }])
+    if (pageData.frontmatter.layout !== 'home') {
+      const innerText = HTMLLoad(htmlContent)('main') // 본문에서
+        .find('a')
+        .remove()
+        .end()
+        .find('h2')
+        .remove() // 제목 제거
+        .end()
+        .find('h3')
+        .remove() // 제목 제거
+        .end()
+        .find('h4')
+        .remove() // 제목 제거
+        .end()
+        .find('.vp-adaptive-theme')
+        .remove() // 코드블럭 제거
+        .end()
+        .text()
+        .replace(/  /gi, ' ')
+
+      const content = `${pageData.frontmatter.subTitle ? pageData.frontmatter.subTitle + ', ' : ''}${innerText}`
+
+      const description = content.length > 200 ? content.substring(0, 197) + '...' : content
+
+      head.push([
+        'meta',
+        {
+          property: 'og:description',
+          content: description,
+        },
+      ])
+    } else {
+      head.push([
+        'meta',
+        {
+          property: 'og:description',
+          content: siteData.description,
+        },
+      ])
     }
 
     if (pageData.frontmatter.timestamp) {

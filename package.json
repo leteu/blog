@@ -21,6 +21,7 @@
     "@types/markdown-it": "^14.1.1",
     "@types/markdown-it-footnote": "^3.0.4",
     "@types/node": "^20.14.2",
+    "cheerio": "1.0.0-rc.12",
     "dayjs": "^1.11.11",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
