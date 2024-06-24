@@ -6,7 +6,7 @@
   outline: 'deep',
   tags: ['docker', 'vitepress', 'docker compose'],
   layout: 'doc',
-  mainImg: '/images/deploy-vitepress-with-docker.png',
+  mainImg: '/images/deploy-vitepress-with-docker-compose.png',
 }
 ---
 
