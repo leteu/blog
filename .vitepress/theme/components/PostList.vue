@@ -123,6 +123,7 @@ function onClickTag(tag: Tag) {
       flex: 1;
       color: var(--vp-c-text-2) !important;
       font-size: 14px;
+      line-height: 14px;
     }
     &__datetime {
       display: flex;
@@ -197,6 +198,8 @@ function onClickTag(tag: Tag) {
     padding: 8px;
 
     &__content {
+      gap: 4px;
+
       &__title {
         font-size: 16px;
       }
