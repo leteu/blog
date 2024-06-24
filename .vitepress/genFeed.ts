@@ -35,7 +35,7 @@ export async function genFeed(config: SiteConfig) {
       id: `${baseUrl}${url}`,
       link: `${baseUrl}${url}`,
       description: excerpt,
-      content: html?.replace(/&ZeroWidthSpace;/gi, ''),
+      content: html?.replace(/&ZeroWidthSpace;/gi, '').replace(/\.html/gi, ''),
       author: [
         {
           name: 'Shin Gyuhyeon',

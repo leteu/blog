@@ -13,7 +13,7 @@
 ::: info
 
 이 포스트는 아래 링크의 포스트에 연결되는 내용이니 혹시나 안 보고 왔으면 보고 오도록  
-[[ci cd] Docker로 Vitepress 배포하기](deploy-vitepress-with-docker.md)
+[[ci cd] Docker로 Vitepress 배포하기](/posts/deploy-vitepress-with-docker.md)
 
 :::
 
