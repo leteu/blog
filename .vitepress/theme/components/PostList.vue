@@ -115,6 +115,15 @@ function onClickTag(tag: Tag) {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-height: 1.5em;
+      max-height: 3em;
+    }
     &__title {
       color: var(--vp-c-text-1) !important;
       font-size: 20px;
