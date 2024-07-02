@@ -6,7 +6,7 @@
   outline: 'deep',
   tags: ['MacOS', 'Maccy', 'Aldente', 'MonitorControl', 'Macs Fan Control', 'runcat'],
   layout: 'doc',
-  mainImg: '/images/macos-recommend-app.png',
+  mainImg: '/images/macos-recommend-app.webp',
 }
 ---
 

@@ -6,7 +6,7 @@
   outline: 'deep',
   tags: ['docker', 'vitepress', '배포', '정적 사이트 배포', 'nginx'],
   layout: 'doc',
-  mainImg: '/images/deploy-vitepress-with-docker.png',
+  mainImg: '/images/deploy-vitepress-with-docker.webp',
 }
 ---
 

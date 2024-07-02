@@ -6,7 +6,7 @@
   outline: 'deep',
   tags: ['vitepress', 'markdown-it', 'footnote', 'tooltip'],
   layout: 'doc',
-  mainImg: '/images/vitepress-footnote-tooltip.png',
+  mainImg: '/images/vitepress-footnote-tooltip.webp',
 }
 ---
 

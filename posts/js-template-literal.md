@@ -6,7 +6,7 @@
   outline: 'deep',
   tags: ['javascript', 'template literals', 'backtick', 'grave', '템플릿 리터널', '백틱'],
   layout: 'doc',
-  mainImg: '/images/js-template-literal.png',
+  mainImg: '/images/js-template-literal.webp',
 }
 ---
 
