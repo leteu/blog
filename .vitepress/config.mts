@@ -101,13 +101,27 @@ export default defineConfig({
     head.push([
       'meta',
       {
+        name: 'theme-color',
+        content: '#62decc',
+      },
+    ])
+    head.push([
+      'meta',
+      {
         name: 'og:type',
         content: pageData.frontmatter.layout === 'home' ? 'website' : 'article',
       },
     ])
     head.push([
       'meta',
-      { property: 'og:image', content: pageData.frontmatter.mainImg || `${env.VITE_HOST_URL}/images/logo.png` },
+      { property: 'og:image', content: `${env.VITE_HOST_URL}${pageData.frontmatter.mainImg || '/images/logo.png'}` },
+    ])
+    head.push([
+      'meta',
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
     ])
     head.push([
       'meta',
@@ -187,6 +201,14 @@ export default defineConfig({
         head.push(['meta', { property: 'article:tag', content: tag }])
       }
     }
+
+    // head.push([
+    //   'link',
+    //   {
+    //     type: 'application/json+oembed',
+    //     href: `${env.VITE_HOST_URL}/oembed.json`,
+    //   },
+    // ])
 
     return head
   },
