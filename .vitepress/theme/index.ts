@@ -9,6 +9,7 @@ import './meslo-lgs-nf.css'
 import MainLayout from './layouts/MainLayout.vue'
 import PostList from './components/PostList.vue'
 import FootnoteTooltip from './components/FootnoteTooltip.vue'
+import './consoleText'
 
 export default {
   extends: DefaultTheme,
