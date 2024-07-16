@@ -1,15 +1,17 @@
 // https://vitepress.dev/guide/custom-theme
-import { h } from 'vue'
 import type { Theme } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
-import './consoleText'
-import './style.css'
-import './noto-sans-korean.css'
+
 import './material-icons.css'
 import './meslo-lgs-nf.css'
-import MainLayout from './layouts/MainLayout.vue'
-import PostList from './components/PostList.vue'
+import './noto-sans-korean.css'
+import './style.css'
+
+import DefaultTheme from 'vitepress/theme'
+
 import FootnoteTooltip from './components/FootnoteTooltip.vue'
+import PostList from './components/PostList.vue'
+import './consoleText'
+import MainLayout from './layouts/MainLayout.vue'
 
 export default {
   extends: DefaultTheme,
@@ -19,7 +21,7 @@ export default {
   //   })
   // },
   Layout: MainLayout,
-  enhanceApp({ app, router, siteData }) {
+  enhanceApp({ app }) {
     // ...
     app.component('PostList', PostList)
     app.component('FootnoteTooltip', FootnoteTooltip)

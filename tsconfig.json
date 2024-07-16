@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "lib": ["esnext", "dom"]
+  },
+  "include": [".vitepress/**/*.ts", ".vitepress/**/*.mts", ".vitepress/**/*.data.ts"],
+  "exclude": ["dist", "node_modules"]
+}

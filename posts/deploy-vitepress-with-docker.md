@@ -329,5 +329,7 @@ Docker compose를 통해서 실행하고 싶다면 [다음 포스트](/posts/dep
 서버 없는 사람들을 위해서 어차피 정적 파일밖에 없는 vitepress 파일들을 굳이 서버에 안 올리고 github page에 action을 통해서 main 브랜치에 push 될 때 배포되도록 하는 방법 역시 작성을 해둘 생각이다.
 
 [^1]: Static Site Generator
+
 [^2]: 기존에도 docker만 가지고 해서 서버에 잡다하게 설치하지 않고 사용하고 있었다.
+
 [^3]: `node:20-slim`을 사용하려고 했는데 vitepress에서 lastUpdate 옵션을 사용하려면 git이 필요한 이슈가 있어서 변경했다.

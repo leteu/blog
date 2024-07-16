@@ -11,9 +11,6 @@ importers:
       '@giscus/vue':
         specifier: ^3.0.0
         version: 3.0.0(vue@3.4.31(typescript@5.5.3))
-      '@types/gtag.js':
-        specifier: ^0.0.20
-        version: 0.0.20
       '@types/markdown-it':
         specifier: ^14.1.1
         version: 14.1.1
@@ -475,9 +472,6 @@ packages:
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
-
-  '@types/gtag.js@0.0.20':
-    resolution: {integrity: sha512-wwAbk3SA2QeU67unN7zPxjEHmPmlXwZXZvQEpbEUQuMCRGgKyE1m6XDuTUA9b6pCGb/GqJmdfMOY5LuDjJSbbg==}
 
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
@@ -2449,8 +2443,6 @@ snapshots:
       shiki: 1.10.3
 
   '@types/estree@1.0.5': {}
-
-  '@types/gtag.js@0.0.20': {}
 
   '@types/hast@3.0.4':
     dependencies:

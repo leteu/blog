@@ -70,7 +70,7 @@ const temp = `별명: ${nickname} / 나이: ${age} / 성별: ${gender}`
 ```html
 <!-- index.html -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />

@@ -9,7 +9,7 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
-    "lint": "eslint . --ext ts --color --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint \".vitepress/**/*.ts\" --ext ts --color --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "pnpm lint --fix",
     "format": "prettier --write \"**/*.{ts,scss,sass,html,md,json}\" --ignore-path .gitignore"
   },

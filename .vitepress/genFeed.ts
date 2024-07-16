@@ -1,13 +1,13 @@
-import path from 'path'
-import { writeFileSync } from 'fs'
-import { Feed } from 'feed'
-import { createContentLoader, type SiteConfig } from 'vitepress'
 import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
+import { Feed } from 'feed'
+import { writeFileSync } from 'fs'
+import path from 'path'
+import { createContentLoader, type SiteConfig } from 'vitepress'
 
 dayjs.extend(timezone)
 
-const baseUrl = `https://leteu.dev`
+const baseUrl = 'https://leteu.dev'
 
 export async function genFeed(config: SiteConfig) {
   const feed = new Feed({
