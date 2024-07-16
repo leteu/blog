@@ -2,26 +2,30 @@
   font-family: 'MesloLGS NF';
   font-weight: normal;
   font-style: normal;
-  src: url('/fonts/MesloLGS/MesloLGS-NF-Regular.ttf') format('ttf');
+  font-display: swap;
+  src: url('/fonts/MesloLGSNF/MesloLGS-NF-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'MesloLGS NF';
   font-weight: bold;
   font-style: normal;
-  src: url('/fonts/MesloLGS/MesloLGS-NF-Bold.ttf') format('ttf');
+  font-display: swap;
+  src: url('/fonts/MesloLGSNF/MesloLGS-NF-Bold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'MesloLGS NF';
   font-weight: normal;
   font-style: italic;
-  src: url('/fonts/MesloLGS/MesloLGS-NF-Italic.ttf') format('ttf');
+  font-display: swap;
+  src: url('/fonts/MesloLGSNF/MesloLGS-NF-Italic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'MesloLGS NF';
   font-weight: bold;
   font-style: italic;
-  src: url('/fonts/MesloLGS/MesloLGS-NF-Bold-Italic.ttf') format('ttf');
+  font-display: swap;
+  src: url('/fonts/MesloLGSNF/MesloLGS-NF-Bold-Italic.woff2') format('woff2');
 }
