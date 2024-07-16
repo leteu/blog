@@ -55,13 +55,14 @@
 <script setup lang="ts">
 import type { Tag } from '../tags.data'
 
-import { data as posts } from '../posts.data'
-import { data as tags } from '../tags.data'
+import { computed, ref } from 'vue'
 import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
 
-import TagChip from './TagChip.vue'
-import { computed, ref } from 'vue'
+import { data as posts } from '../posts.data'
+import { data as tags } from '../tags.data'
+
+import TagChip from '../components/TagChip.vue'
 
 dayjs.extend(timezone)
 
@@ -105,7 +106,10 @@ function onClickTag(tag: Tag) {
   text-decoration: none !important;
   color: unset !important;
   height: 150px;
-  transition: box-shadow 0.25s, color 0.25s, opacity 0.25s !important;
+  transition:
+    box-shadow 0.25s,
+    color 0.25s,
+    opacity 0.25s !important;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0);
   padding: var(--space-md);
   gap: var(--space-md);

@@ -33,7 +33,10 @@ export default defineConfig({
       `window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '${env.VITE_GOOGLE_TAG}');`,
+
+      gtag('config', '${env.VITE_GOOGLE_TAG}', {
+        'cookie_flags': 'SameSite=None;Secure'
+      });`,
     ],
     [
       'meta',

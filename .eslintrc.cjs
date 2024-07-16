@@ -2,20 +2,14 @@ module.exports = {
   root: true,
   env: {},
   extends: [
-    'airbnb',
+    'plugin:vue/base',
     'eslint:recommended',
-    'airbnb/hooks',
-    'airbnb-typescript',
+    'plugin:vue/vue3-recommended',
+    'plugin:vue/essential',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:prettier/recommended',
-    'plugin:import/recommended',
   ],
   ignorePatterns: ['plugins/**/*', '.eslintrc.cjs'],
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
     ecmaVersion: 'latest',
     sourceType: 'module',
     parser: '@typescript-eslint/parser',
@@ -30,8 +24,8 @@ module.exports = {
       typescript: {},
     },
   },
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'import', 'unused-imports'],
+  parser: 'vue-eslint-parser',
+  plugins: ['@typescript-eslint', 'vue', 'import', 'unused-imports'],
   rules: {
     'import/no-cycle': 'error',
     'import/order': [
@@ -84,21 +78,11 @@ module.exports = {
     'no-redeclare': 'off',
     '@typescript-eslint/no-redeclare': 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        printWidth: 120,
-        singleQuote: true,
-        semi: false,
-        singleAttributePerLine: true,
-        endOfLine: 'lf',
-        trailingComma: 'all',
-        arrowParens: 'always',
-      },
-    ],
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/no-floating-promises': 'off',
+    semi: 'off',
+    '@typescript-eslint/semi': 'off',
   },
   globals: {
     require: true,
