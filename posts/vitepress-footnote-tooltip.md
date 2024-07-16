@@ -78,13 +78,9 @@ hello[^1]
 
 기본적으로 툴팁이 있어야 붙이든 말든 하기 때문에 codepen에서 적당히 이쁜 툴팁을 찾아왔다.  
 맘에 안들면 다른거 찾아와서 똑같이 따라하면 된다.  
-나는 아래 보이는 tooltip을 하려고 한다.
+나는 아래 링크의 tooltip을 사용해서 하려고 한다.
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="CSS Tooltip Magic" src="https://codepen.io/tutsplus/embed/WROvdG?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/tutsplus/pen/WROvdG">
-  CSS Tooltip Magic</a> by Envato Tuts+ (<a href="https://codepen.io/tutsplus">@tutsplus</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+[tutsplus - CSS Tooltip Magic](https://codepen.io/tutsplus/pen/WROvdG)
 
 ### 2-1. Tooltip Component
 

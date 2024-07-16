@@ -89,7 +89,7 @@ function onClickTag(tag: Tag) {
 <style lang="scss" scoped>
 .home-container {
   display: flex;
-  gap: 32px;
+  gap: var(--space-lg);
 }
 
 .post-list {
@@ -107,8 +107,8 @@ function onClickTag(tag: Tag) {
   height: 150px;
   transition: box-shadow 0.25s, color 0.25s, opacity 0.25s !important;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0);
-  padding: 16px;
-  gap: 16px;
+  padding: var(--space-md);
+  gap: var(--space-md);
 
   &__content {
     flex: 1;
@@ -196,7 +196,7 @@ function onClickTag(tag: Tag) {
     &__list {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: var(--space-sm);
     }
   }
 }

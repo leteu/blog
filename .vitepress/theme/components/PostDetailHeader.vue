@@ -65,8 +65,8 @@ function getTime(timestamp: number) {
 .detail-header {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 48px;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
 }
 
 .main-img {
@@ -78,14 +78,14 @@ function getTime(timestamp: number) {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 16px;
+  gap: var(--space-md);
   flex-wrap: wrap;
 }
 .datetime {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 4px;
+  gap: var(--space-xs);
   color: var(--vp-c-text-2) !important;
   font-size: 16px;
   line-height: 24px;
@@ -98,7 +98,7 @@ function getTime(timestamp: number) {
 .chip-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
 }
 </style>

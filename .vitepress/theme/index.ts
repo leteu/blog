@@ -2,6 +2,7 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import './consoleText'
 import './style.css'
 import './noto-sans-korean.css'
 import './material-icons.css'
@@ -9,7 +10,6 @@ import './meslo-lgs-nf.css'
 import MainLayout from './layouts/MainLayout.vue'
 import PostList from './components/PostList.vue'
 import FootnoteTooltip from './components/FootnoteTooltip.vue'
-import './consoleText'
 
 export default {
   extends: DefaultTheme,

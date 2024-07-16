@@ -60,7 +60,7 @@ const onClickTag = () => {
   font-size: 12px;
   font-weight: 500;
   border-radius: 4px;
-  padding: 4px 8px;
+  padding: var(--space-xs) var(--space-sm);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -68,14 +68,14 @@ const onClickTag = () => {
     cursor: pointer;
   }
   &__count {
-    margin-left: 4px;
+    margin-left: var(--space-xs);
   }
   &__active {
     background: var(--vp-c-brand-1);
     color: var(--vp-c-white);
     &__icon {
       font-size: 12px;
-      margin-left: 4px;
+      margin-left: var(--space-xs);
     }
   }
 }
