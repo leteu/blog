@@ -5,6 +5,7 @@ import './material-icons.css'
 import './meslo-lgs-nf.css'
 import './noto-sans-korean.css'
 import './style.css'
+import './style.scss'
 
 import DefaultTheme from 'vitepress/theme'
 
@@ -12,6 +13,7 @@ import FootnoteTooltip from './components/FootnoteTooltip.vue'
 import PostList from './components/PostList.vue'
 import './consoleText'
 import MainLayout from './layouts/MainLayout.vue'
+import UrlEmbed from './components/UrlEmbed.vue'
 
 export default {
   extends: DefaultTheme,
@@ -25,5 +27,6 @@ export default {
     // ...
     app.component('PostList', PostList)
     app.component('FootnoteTooltip', FootnoteTooltip)
+    app.component('UrlEmbed', UrlEmbed)
   },
 } satisfies Theme

@@ -79,6 +79,7 @@ RUN corepack enable
 
 이 3줄짜리 코드는 `node:20-alpine`에서 pnpm을 사용하기 위해 작성했다.  
 관련 내용은 [여기](https://pnpm.io/docker)서 확인이 가능하다.
+<UrlEmbed url="https://pnpm.io/docker" />
 
 ### 2-3. WORKDIR
 
@@ -138,8 +139,7 @@ RUN pnpm install
 
 이렇게만 작성해도 될 텐데 뭐 이렇게 어렵게 작성해 뒀냐고 한다면  
 docker image를 만들 때마다 처음부터 패키지를 install 할거였으면 pnpm이니 yarn 을 쓸 이유가 없다.  
-그래서 캐시된 패키지도 사용해서 쓰기 위해 이렇게 작성했다.  
-[여기](https://pnpm.io/docker)보고 따라 한 게 맞다.
+그래서 캐시된 패키지도 사용해서 쓰기 위해 이렇게 작성했다.
 
 ```dockerfile
 RUN apk --no-cache add git

@@ -17,6 +17,7 @@ Quasar를 처음 접했을 때 검색하기 참 힘들었던 거 같다.
 ## 1. 공식 사이트
 
 https://quasar.dev/
+<UrlEmbed url="https://quasar.dev/" />
 
 Vuetify 와는 다르게 문서가 좀 더 깔끔하고 상냥한 거 같다.
 상단에 컴포넌트의 설명을 검색도 가능하게 해 준 뒤 예제들을 종류별로 다 뿌려두었다.
