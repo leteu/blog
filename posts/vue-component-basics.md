@@ -16,7 +16,8 @@ Vue 3를 기준으로 작성하였다.
 ## 1. 참고
 
 https://v2.ko.vuejs.org/v2/guide/components.html
-<UrlEmbed url="https://v2.ko.vuejs.org/v2/guide/components.html" />
+
+::: embed-url https://v2.ko.vuejs.org/v2/guide/components.html :::
 
 일단 공식 문서를 보자. 항상 공식 문서를 먼저 확인하자.  
 저거 새창으로 열고 뒤로가기 눌러도 좋다.
@@ -70,7 +71,8 @@ typescript, javascript 파일에서 컴포넌트 만들 사람들은 `optional a
 vue3에서 vue2와 문법이 바뀐 녀석이다.  
 바뀌어 봐야 `createElement`를 param으로 넘겨주던걸 h 함수를 import 해오는 식으로 밖에 변경된건 없다.  
 [vue 2 render function](https://v2.vuejs.org/v2/guide/render-function)
-<UrlEmbed url="https://v2.vuejs.org/v2/guide/render-function" />
+
+::: embed-url https://v2.vuejs.org/v2/guide/render-function :::
 
 h 함수를 vue에서 임포트 해와서 코드를 짤 수 있다.  
 쓸 때 template은 지우고 써야 한다. 걔가 우선순위가 더 높다.
@@ -211,7 +213,8 @@ export default defineComponent({
 ## 4. Slot
 
 https://vuejs.org/guide/components/slots.html
-<UrlEmbed url="https://vuejs.org/guide/components/slots.html" />
+
+::: embed-url https://vuejs.org/guide/components/slots.html :::
 
 prop으로 냅다 모든걸 보내버릴 생각 말고 `slot`도 활용을 해주자.
 

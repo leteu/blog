@@ -193,4 +193,5 @@ const emitSrc = () => {
 Vuex와 Pinia는 이번 포스팅에선 언급만 하고 넘어가고 후에 자세하게 풀어보도록 하겠습니다.
 
 https://v2.ko.vuejs.org/v2/guide/state-management.html
-<UrlEmbed url="https://v2.ko.vuejs.org/v2/guide/state-management.html" />
+
+::: embed-url https://v2.ko.vuejs.org/v2/guide/state-management.html :::

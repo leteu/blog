@@ -79,7 +79,8 @@ RUN corepack enable
 
 이 3줄짜리 코드는 `node:20-alpine`에서 pnpm을 사용하기 위해 작성했다.  
 관련 내용은 [여기](https://pnpm.io/docker)서 확인이 가능하다.
-<UrlEmbed url="https://pnpm.io/docker" />
+
+::: embed-url https://pnpm.io/docker :::
 
 ### 2-3. WORKDIR
 

@@ -15,7 +15,8 @@
 아래 링크에서 더 자세하고 많이 볼 수 있다.
 
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array
-<UrlEmbed url="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array" />
+
+::: embed-url https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array :::
 
 - 아래 나오는 친구들 모두 원래의 배열은 변형하지 않는다.
 

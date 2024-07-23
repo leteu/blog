@@ -18,8 +18,9 @@
 윈도에는 `클립보드`라는 이전에 복사해 뒀던 history를 보여주고 바로 붙여 넣을 수 있는 기능이 있다.  
 그 클립보드 기능을 추가해 주는 프로그램이다.
 
-> [Maccy](https://maccy.app)  
-> <UrlEmbed url="https://maccy.app" />
+> [Maccy](https://maccy.app)
+>
+> ::: embed-url https://maccy.app :::
 
 기본적으로 무료이고 공식 사이트에서 다운로드하려면 기부해야만 하는 거 같다(?)  
 [maccy github](https://github.com/p0deje/Maccy)에 `Releases`에서 다운받거나 `brew` 써서 받으면 될 거 같다.
@@ -49,8 +50,9 @@ command ⌘ + shift ⇧ + v
 80 위로 충전하면 수명이 빨리 소모된다는 것이다.  
 하지만 나처럼 하루 종일 책상에 올려다 놓고 일하는 사람들은 계속 충전을 해주고 있어야 하는 데 수시로 배터리 체크하면서 충전 했다, 안 했다하는 건 매우 귀찮은 일이다.
 
-> [Aldente github](https://apphousekitchen.com/)  
-> <UrlEmbed url="https://apphousekitchen.com/" />
+> [Aldente github](https://apphousekitchen.com/)
+>
+> ::: embed-url https://apphousekitchen.com/ :::
 
 `알덴테`를 사용하면 맥북의 베터리를 80%까지만 충전되도록 제한을 걸어줄 수 있다.  
 무료 버전과 pro 버전 2가지가 있는데 80% 제한만 걸어두는 건 무료 버전에서도 지원하고 pro 버전에서는 이것저것 기능이 추가 된다.  
@@ -79,8 +81,9 @@ command ⌘ + shift ⇧ + v
 맥에서 사용하는 모니터마다 밝기를 따로따로 관리해 줄 수 있는 프로그램이다.  
 모니터에 포커싱하고 있을 때 밝기 조절 단축키를 사용하면 그 모니터만 줄어든다.
 
-> [MonitorControl](https://github.com/MonitorControl/MonitorControl)  
-> <UrlEmbed url="https://github.com/MonitorControl/MonitorControl" />
+> [MonitorControl](https://github.com/MonitorControl/MonitorControl)
+>
+> ::: embed-url https://github.com/MonitorControl/MonitorControl :::
 
 ![MonitorControl menu bar image](/images/macos-recommend-app/monitor-control-1.png)
 
@@ -90,8 +93,9 @@ command ⌘ + shift ⇧ + v
 
 air는 팬이 없으니 넘겨도 된다.
 
-> [Macs Fan Control](https://crystalidea.com/macs-fan-control)  
-> <UrlEmbed url="https://crystalidea.com/macs-fan-control" />
+> [Macs Fan Control](https://crystalidea.com/macs-fan-control)
+>
+> ::: embed-url https://crystalidea.com/macs-fan-control :::
 
 맥에 있는 쿨러의 속도를 조절할 수 있게 해주는 프로그램이다.
 ![Macs Fan Control menu bar image](/images/macos-recommend-app/macs-fan-control-1.png)
@@ -106,8 +110,9 @@ pro 버전이 따로 있어서 돈을 내면 프로필을 저장해두고 사용
 이번에 소개하는 프로그램 중에 제일 쓸모없다.  
 하지만 이쁘다. 그래서 쓴다.
 
-> [runcat](https://kyome.io/runcat/index.html?lang=en)  
-> <UrlEmbed url="https://kyome.io/runcat/index.html?lang=en" />
+> [runcat](https://kyome.io/runcat/index.html?lang=en)
+>
+> ::: embed-url https://kyome.io/runcat/index.html?lang=en :::
 
 ![runcat menu bar image](/images/macos-recommend-app/runcat-1.gif)
 

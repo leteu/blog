@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .flex,
 .row {
   display: flex;
@@ -10,20 +12,19 @@
 .col {
   flex: 1;
 }
+.row > .col {
+  height: 100%;
+}
+
 [class*='col-'] {
   flex: unset;
   width: unset;
 }
-@each $num in 12 {
+@for $num from 1 through 12 {
   .col-#{$num} {
-    flex-basis: ($num / 12) * 1%;
+    flex-basis: (math.div(100%, 12) * $num);
   }
-}
 
-.row > .col {
-  height: 100%;
-}
-@each $num in 12 {
   .row > .col-#{$num} {
     height: 100%;
   }
@@ -126,4 +127,87 @@ $gap-default: 16px;
 .separator__vertical {
   width: 1px;
   height: auto;
+}
+
+@mixin ellipse($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  line-height: 1.5em;
+  max-height: $line * 1.5em;
+}
+
+.url-embed {
+  position: relative;
+  height: 150px;
+  text-decoration: none !important;
+  background: #fff;
+  &::before {
+    content: '';
+    display: block;
+    background: var(--theme-color);
+    width: 5px;
+    height: auto;
+    left: 0;
+    top: 0;
+  }
+  &:hover {
+    .url-embed__title {
+      text-decoration: underline;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    border-top: 1px solid var(--vp-c-gray-1);
+    border-bottom: 1px solid var(--vp-c-gray-1);
+  }
+  &__title {
+    @include ellipse(1);
+  }
+  &__desc {
+    color: #999;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.5em;
+    overflow: hidden;
+    @include ellipse(3);
+  }
+  &__info {
+    justify-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--space-xs);
+    font-size: 12px;
+    color: #a2a2a2;
+    span {
+      @include ellipse(1);
+    }
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    border-top: 1px solid var(--vp-c-gray-1);
+    border-bottom: 1px solid var(--vp-c-gray-1);
+    display: flex;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  > div:last-child {
+    border-right: 1px solid var(--vp-c-gray-1);
+  }
 }

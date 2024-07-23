@@ -16,7 +16,8 @@ ES6부터 도입된 문자열이다.
 백틱 ( \` )을 사용한다.
 
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals
-<UrlEmbed url="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals" />
+
+::: embed-url https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals :::
 
 위 문서를 기반으로 포스팅한 글이다.  
 블로그만 보지 말고 공식 문서도 한번 읽어보면 좋겠다.
