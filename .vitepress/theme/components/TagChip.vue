@@ -7,8 +7,7 @@
     }"
     @click="onClickTag"
   >
-    <template v-if="showTag"># </template>
-    {{ label }}
+    {{ `${showTag ? `# ` : ''}${label}` }}
     <template v-if="count">
       <span class="chip__count">
         {{ count }}

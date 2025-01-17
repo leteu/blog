@@ -1,5 +1,4 @@
 <template>
-  <!-- <div ref="comments"></div> -->
   <Giscus
     id="comments"
     :repo="giscus.repo"
@@ -17,9 +16,9 @@
 </template>
 
 <script setup lang="ts">
+import Giscus from '@giscus/vue'
 import { useData } from 'vitepress'
 import { computed } from 'vue'
-import Giscus from '@giscus/vue'
 
 import { data as giscus } from '../giscus.data'
 

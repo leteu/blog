@@ -12,11 +12,11 @@
 </template>
 
 <script setup lang="ts">
-import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
+import DefaultTheme from 'vitepress/theme'
 
-import PostDetailHeader from '../components/PostDetailHeader.vue'
 import PostDetailComment from '../components/PostDetailComment.vue'
+import PostDetailHeader from '../components/PostDetailHeader.vue'
 
 const { Layout } = DefaultTheme
 const { page } = useData()

@@ -10,6 +10,12 @@
     "sourceMap": true,
     "lib": ["esnext", "dom"]
   },
-  "include": [".vitepress/**/*.ts", ".vitepress/**/*.mts", ".vitepress/**/*.data.ts"],
+  "include": [
+    ".vitepress/**/*.ts",
+    ".vitepress/**/*.mts",
+    ".vitepress/**/*.data.ts",
+    ".vitepress/**/*.vue",
+    "eslint.config.mjs"
+  ],
   "exclude": ["dist", "node_modules"]
 }

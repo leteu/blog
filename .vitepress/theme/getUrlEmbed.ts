@@ -3,10 +3,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 const embedUrlPattern =
-  /::: embed-url ((https?:\/\/)?[\w-]+(\.[\w-]+)+(\.[a-zA-Z0-9]{2,})?(\/[\w-]+(\/[\w-]+)*)*(.html)?\/?(\?[\w-]+\=[\w]+((\&[\w-]+\=[\w-]+)?)*)?) :::/gi
+  /::: embed-url ((https?:\/\/)?[\w-]+(\.[\w-]+)+(\.[a-zA-Z0-9]{2,})?(\/[\w-]+(\/[\w-]+)*)*(.html)?\/?(\?[\w-]+=[\w]+((&[\w-]+=[\w-]+)?)*)?) :::/gi
 
 const urlPattern =
-  /((https?:\/\/)?[\w-]+(\.[\w-]+)+(\.[a-zA-Z0-9]{2,})?(\/[\w-]+(\/[\w-]+)*)*(.html)?\/?(\?[\w-]+\=[\w]+((\&[\w-]+\=[\w-]+)?)*)?)/
+  /((https?:\/\/)?[\w-]+(\.[\w-]+)+(\.[a-zA-Z0-9]{2,})?(\/[\w-]+(\/[\w-]+)*)*(.html)?\/?(\?[\w-]+=[\w]+((&[\w-]+=[\w-]+)?)*)?)/
 
 type MetaData = Record<string, string>
 
@@ -21,7 +21,7 @@ async function prefetchMetaDatas() {
 
     if (!match) return acc
 
-    for (let item of match) {
+    for (const item of match) {
       acc.push(item.match(urlPattern)![1])
     }
 
@@ -30,39 +30,11 @@ async function prefetchMetaDatas() {
 
   const metas = new Map<string, MetaData>()
 
-  for (let url of urls) {
+  for (const url of urls) {
     metas.set(url, await getMetaTagsFromURL(url))
   }
 
   return metas
-}
-
-function getCurrectImageUrl(url: string, base: URL) {
-  if (url.startsWith('http')) {
-    return new URL(url).href
-  }
-
-  if (url.startsWith('/')) {
-    return new URL(`${base.origin}${url}`).href
-  }
-
-  return new URL(`${base.origin + base.pathname.substring(0, base.pathname.lastIndexOf('/') + 1)}${url}`).href
-}
-
-async function getImage(url: string): Promise<HTMLImageElement> {
-  return new Promise<HTMLImageElement>((resolve, reject) => {
-    const img = new Image()
-
-    img.onload = () => {
-      resolve(img)
-    }
-
-    img.onerror = (error) => {
-      reject(error)
-    }
-
-    img.src = url
-  })
 }
 
 async function getMetaTagsFromURL(url: string): Promise<MetaData> {
@@ -76,14 +48,12 @@ async function getMetaTagsFromURL(url: string): Promise<MetaData> {
     const metaTags = Array.from($('meta')).reduce<Record<string, string>>((acc, cur) => {
       const el = $(cur)
 
-      try {
-        const key = el.attr('name') || el.attr('property')
-        if (!key) throw false
+      const key = el.attr('name') || el.attr('property')
+      if (!key) return acc
 
-        acc[key] = el.attr('content')!
-      } finally {
-        return acc
-      }
+      acc[key] = el.attr('content')!
+
+      return acc
     }, {})
 
     return {

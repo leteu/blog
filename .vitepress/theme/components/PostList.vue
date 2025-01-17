@@ -22,8 +22,8 @@
             </div>
           </div>
           <div
-            class="post__main-img"
             v-if="post.mainImg"
+            class="post__main-img"
           >
             <img
               :src="post.mainImg"
@@ -37,7 +37,10 @@
       <div class="side-content__tags">
         <span class="side-content__tags__title">태그</span>
         <div class="side-content__tags__list">
-          <template v-for="tag in tags">
+          <template
+            v-for="(tag, index) in tags"
+            :key="`tag-${index}__${tag.label}`"
+          >
             <TagChip
               :label="tag.label"
               :count="tag.count"
@@ -55,14 +58,13 @@
 <script setup lang="ts">
 import type { Tag } from '../tags.data'
 
-import { computed, ref } from 'vue'
 import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
-
-import { data as posts } from '../posts.data'
-import { data as tags } from '../tags.data'
+import { computed, ref } from 'vue'
 
 import TagChip from '../components/TagChip.vue'
+import { data as posts } from '../posts.data'
+import { data as tags } from '../tags.data'
 
 dayjs.extend(timezone)
 
@@ -125,6 +127,7 @@ function onClickTag(tag: Tag) {
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
+      line-clamp: 2;
       line-height: 1.5em;
       max-height: 3em;
     }
