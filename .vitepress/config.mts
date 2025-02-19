@@ -1,14 +1,11 @@
-import { defineConfig } from 'vitepress'
-
-import { genFeed } from './genFeed'
+import * as cheerio from 'cheerio'
 import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
-import { loadEnv } from 'vitepress'
-import { HeadConfig } from 'vitepress'
 import footnote from 'markdown-it-footnote'
-import * as cheerio from 'cheerio'
+import { defineConfig, loadEnv, HeadConfig } from 'vitepress'
+
+import { genFeed } from './genFeed'
 import { embedUrlPattern, getUrlEmbed, prefetchMetaDatas, urlPattern } from './theme/getUrlEmbed'
-import Token from 'markdown-it/lib/token.mjs'
 
 dayjs.extend(timezone)
 
@@ -30,23 +27,34 @@ export default defineConfig(
           md.use(footnote)
           md.core.ruler.push('embed_url', (state) => {
             const tokens = state.tokens
-            const tokenLength = tokens.length
-            for (let i = 0; i < tokenLength; i++) {
+            let i = 0
+            while (i < tokens.length) {
               if (tokens[i]?.type === 'inline' && tokens[i + 1] && tokens[i + 1]!.type === 'paragraph_close') {
                 const content = tokens[i]!.content.trim()
                 const match = content.match(embedUrlPattern)
 
-                if (!match) continue
+                if (!match) {
+                  i++
+                  continue
+                }
 
                 const url = match[0].match(urlPattern)![1]
                 const meta = metas.get(url) || {}
+
+                if (i > 0) {
+                  tokens.splice(i - 1, 1)
+                  i--
+                }
 
                 tokens[i].type = 'html_block'
                 tokens[i].tag = ''
                 tokens[i].level = 0
                 tokens[i].content = getUrlEmbed(url, meta)
                 tokens[i].children = null
+
+                tokens.splice(i + 1, 1)
               }
+              i++
             }
           })
         },
@@ -177,7 +185,7 @@ export default defineConfig(
             .remove() // 코드블럭 제거
             .end()
             .text()
-            .replace(/  /gi, ' ')
+            .replace(/ {2}/gi, ' ')
 
           const content = `${pageData.frontmatter.subTitle ? pageData.frontmatter.subTitle + ', ' : ''}${innerText}`
 
@@ -255,10 +263,10 @@ export default defineConfig(
           provider: 'local',
           options: {
             detailedView: true,
-            _render: (src, env, md) => {
+            _render: (src, environ, md) => {
               const html = md.render(src, env)
-              if (env.frontmatter?.search === false) return ''
-              return env.frontmatter?.title ? md.render('# ' + env.frontmatter?.title) + html : html
+              if (environ.frontmatter?.search === false) return ''
+              return environ.frontmatter?.title ? md.render('# ' + environ.frontmatter?.title) + html : html
             },
           },
         },
@@ -304,6 +312,15 @@ export default defineConfig(
         hostname: env.VITE_HOST_URL,
       },
       srcExclude: ['**/README.md'],
+      vite: {
+        css: {
+          preprocessorOptions: {
+            scss: {
+              api: 'modern-compiler',
+            },
+          },
+        },
+      },
     }
   })(),
 )
