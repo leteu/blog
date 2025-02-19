@@ -1,5 +1,5 @@
 # Build
-FROM node:20-alpine as build
+FROM node:22-alpine AS build
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
@@ -12,7 +12,7 @@ RUN apk --no-cache add git
 RUN pnpm run docs:build
 
 # Deploy
-FROM nginx:alpine as deploy
+FROM nginx:alpine AS deploy
 
 COPY --from=build /app/.vitepress/dist /usr/share/nginx/html
 COPY default.conf /etc/nginx/conf.d/default.conf
